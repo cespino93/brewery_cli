@@ -1,0 +1,11 @@
+1. build cli
+2. welcome user, prompt to either select a state, or tell exit
+3. if they select state, print the list of breweries
+    1. brewery
+4. they can select brewery by name to print details of brewery
+5. if they select exit, goodbye exit program
+
+3 classes:
+CLI - controller - what communicates with my user
+brewery - where objects are created and stored for user display 
+API - bring in external, consume api here, instatiate my objects
