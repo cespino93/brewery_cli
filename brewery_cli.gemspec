@@ -6,9 +6,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["cespino93"]
   spec.email         = ["chrisl.espino@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
+  spec.summary       = %q{My CLI allows you to choose a Brewery from a list of breweries. You can see its state & city and also allows you acces to their phone number }
   spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/cespino93/brewery_cli"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"

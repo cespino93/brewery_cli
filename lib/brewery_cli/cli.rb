@@ -14,11 +14,8 @@ class BreweryCli::CLI
         menu
     end
 
-    
-    
     def menu
         input = gets.strip.downcase
-        
         if input == "menu"
             list
             menu
@@ -32,41 +29,49 @@ class BreweryCli::CLI
         end
     end
 
-
-    
-    
     def list
         Brewery.all.each_with_index do |breweries, index|
-            puts "#{index + 1}. #{breweries.name}"
+            puts"#{index + 1}. #{breweries.name}"
         end
         input = gets.strip.downcase
-        brewery_selection(input)
+        number_selection(input)
         puts ""
         puts ""
-        puts "~~~~ Please enter 'menu' to return to list of Breweries ~~~~"
-        puts "~~~~ OR enter 'phone' to see a list of phone numbers ~~~~"
+        puts "~~~ Please enter ' menu' to return to list of Breweries ~~~~"
+        puts "~~~ OR enter 'phone' to see a list of phone number ~~~~"
     end
 
-    def try_again
-        puts "Invalid entry, try again"
-        menu
+    def  try_again
+         puts "Invalid entry, try again"
+         menu
     end
 
     def phone_number
         Brewery.all.each do |name|
-        puts "#{name.name} - #{name.phone}l" 
+        puts "#{name.name} - #{name.phone}" 
         end
         input = gets.strip.downcase
+        puts ""
+        puts ""
+        puts "~~~ 'exit' brings you back to the menu, once in menu, enter exit... to exit~~~"
+        puts ""
+        puts ""
         brewery_selection(input)
     end
 
-    def brewery_selection(name)
-        brewery_lists = Brewery.find_by_name(name)
-        brewery_lists.each do |s|
-            puts "city: #{s.city}"
-            puts "state: #{s.state}"
+    def number_selection(numero)
+        brewery_lists = Brewery.find_by_name(numero) || (numero.to_i != 0 && Brewery.all[numero.to_i - 1])
+        if brewery_lists 
+        brewery_selection(brewery_lists)
+        else 
+        try_again
         end
     end
-        
+    
+    def brewery_selection(name)
+        puts "state: #{name.state}"
+        puts "city:  #{name.city}"
+    end
 end
+
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/brewery_cli'
-require "pry"
+
 
 BreweryCli::CLI.new.call
-# binding.pry
+
